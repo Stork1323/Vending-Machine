@@ -19,10 +19,10 @@ module vending_machine(
 		S3: 15$
 	*/
 	
-	state_e current_state, next_state = S0;
+	state_e current_state, next_state;
 	//state_e next_state = S0;
 	
-	always @(posedge clk_i) begin : update_next_state
+	always_ff @(posedge clk_i) begin : update_next_state
 	
 //		if (nickle_i) coins = 3'b001;
 //		if (dime_i) coins = 3'b010;
